@@ -1,0 +1,7 @@
+PGN,SPN,Start Bit,Length,Resolution,Offset,Min,Max,Description
+65108,110,0,16,0.03125,-273,0,1735,Engine Coolant Temperature (°C)
+65108,174,16,8,1,0,0,250,Engine Fuel Temperature (°C)
+61444,190,0,8,0.4,0,0,100,Engine Speed (rpm)
+61444,102,8,8,1,-125,-125,125,Engine Intake Manifold Pressure (kPa)
+65267,84,0,32,0.0000001,0,0,360,Wheel-Based Vehicle Speed (km/h)
+65262,110,0,16,0.03125,-273,0,1735,Engine Coolant Temperature (°C)

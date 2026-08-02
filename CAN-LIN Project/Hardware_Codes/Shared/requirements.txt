@@ -1,0 +1,7 @@
+python-can>=4.0.0
+cantools>=36.0.0
+RPi.GPIO>=0.7.0
+numpy>=1.21.0
+matplotlib>=3.5.0
+flask>=2.0.0
+requests>=2.25.0
