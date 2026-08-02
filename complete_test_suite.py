@@ -60,9 +60,9 @@ def test_linux_functionality():
         print(f"Could not check interfaces: {e}")
     
     tests = [
-        ("Virtual CAN (vcan0)", "python3 ../Archive/main_cont_1.py vcan0 --test"),
-        ("Virtual CAN (vcan1)", "python3 ../Archive/main_cont_1.py vcan1 --test"), 
-        ("Real CAN (can0)", "python3 ../Archive/main_cont_1.py can0 --test"),
+        ("Virtual CAN (vcan0)", "python3 Archive/main_cont_1.py vcan0 --test"),
+        ("Virtual CAN (vcan1)", "python3 Archive/main_cont_1.py vcan1 --test"), 
+        ("Real CAN (can0)", "python3 Archive/main_cont_1.py can0 --test"),
         ("Linux CAN Utils", "cansend vcan0 123#DEADBEEF"),
         ("CAN Dump Test", "timeout 2 candump vcan0"),
         ("Original Sender", "python3 sender-code.py --test"),
