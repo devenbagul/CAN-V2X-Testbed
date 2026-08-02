@@ -166,3 +166,10 @@ vehicle_b.log
 can_messages_*.json
 can_messages_shared.json
 can_messages_test.json
+
+# Archive and untracked folders
+Archive/
+CheckV2X/
+.venv/
+__pycache__/
+
