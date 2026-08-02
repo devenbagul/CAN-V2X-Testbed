@@ -21,7 +21,7 @@ The repository represents a hierarchical automotive network simulation and hardw
 
 ## 2. File-by-File Technical Analysis
 
-### Core Main Workspace (`CAN-LIN Project/`)
+### Core Main Workspace (Root Directory)
 
 #### `reciever-code.py`
 - **Role**: The main LIN-CAN gateway translation daemon.
@@ -67,7 +67,7 @@ The repository represents a hierarchical automotive network simulation and hardw
 
 ---
 
-### V2X Simulation & Safety Workspace (`CAN-LIN Project/V2X/`)
+### V2X Simulation & Safety Workspace (`V2X/`)
 
 #### `shared_can.py`
 - **Role**: Inter-Process Communication (IPC) mock CAN interface.
@@ -96,7 +96,7 @@ The repository represents a hierarchical automotive network simulation and hardw
 
 ---
 
-### Physical Hardware Workspace (`CAN-LIN Project/Hardware_Codes/`)
+### Physical Hardware Workspace (`Hardware_Codes/`)
 
 #### `Shared/can_protocol.py`
 - **Role**: Unified message protocol catalog.

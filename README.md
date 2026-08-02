@@ -20,30 +20,31 @@ An advanced, end-to-end automotive networking and safety application designed fo
 .
 ├── PROJECT_BREAKDOWN.md          # Comprehensive module & file-by-file guide
 ├── README.md                     # Root project documentation (this file)
-└── CAN-LIN Project/              # Main project workspace
-    ├── V2X/                      # V2X simulation and safety dashboard
-    │   ├── shared_can.py         # File-based simulated CAN IPC interface
-    │   ├── v2x_safety.py         # Safety thresholds and override rules
-    │   ├── v2x_simulator.py      # Virtual vehicle ECU generator
-    │   ├── v2x_ui.py             # Instrument cluster dashboard GUI
-    │   └── main.py               # V2X entry point
-    │
-    ├── Hardware_Codes/           # Raspberry Pi deployment codes
-    │   ├── Setup_Scripts/        # System configuration & loopback test scripts
-    │   ├── Shared/               # Common CAN protocol & frame builders
-    │   ├── Vehicle_A/            # Sender controller & dashboard
-    │   └── Vehicle_B/            # Evasive action receiver & dashboard
-    │
-    ├── shared_bus.py             # In-memory pub/sub mock CAN bus
-    ├── ui_decode.py              # Main Tkinter J1939 decoder & monitor
-    ├── updated-lin-can-gateway-ui.py # Integrated gateway control & log GUI
-    ├── reciever-code.py          # Gateway translation & J1939 responder
-    ├── sender-code.py            # CAN/LIN gateway test engine
-    ├── pgn_fileread.py           # File-based PGN request sequence runner
-    ├── setup_vcan.py             # Linux virtual CAN interface setup utility
-    ├── complete_test_suite.py    # Cross-platform automated test runner
-    ├── requirements.txt          # Python packages list
-    └── README.md                 # Original project README
+├── .gitignore                    # Git ignore file (excludes Archive, Venv, etc.)
+├── .gitattributes                # Enforces line endings configuration
+│
+├── V2X/                          # V2X simulation and safety dashboard
+│   ├── shared_can.py             # File-based simulated CAN IPC interface
+│   ├── v2x_safety.py             # Safety thresholds and override rules
+│   ├── v2x_simulator.py          # Virtual vehicle ECU generator
+│   ├── v2x_ui.py                 # Instrument cluster dashboard GUI
+│   └── main.py                   # V2X entry point
+│
+├── Hardware_Codes/               # Raspberry Pi deployment codes
+│   ├── Setup_Scripts/            # System configuration & loopback test scripts
+│   ├── Shared/                   # Common CAN protocol & frame builders
+│   ├── Vehicle_A/                # Sender controller & dashboard
+│   └── Vehicle_B/                # Evasive action receiver & dashboard
+│
+├── shared_bus.py                 # In-memory pub/sub mock CAN bus
+├── ui_decode.py                  # Main Tkinter J1939 decoder & monitor
+├── updated-lin-can-gateway-ui.py # Integrated gateway control & log GUI
+├── reciever-code.py              # Gateway translation & J1939 responder
+├── sender-code.py                # CAN/LIN gateway test engine
+├── pgn_fileread.py               # File-based PGN request sequence runner
+├── setup_vcan.py                 # Linux virtual CAN interface setup utility
+├── complete_test_suite.py        # Cross-platform automated test runner
+└── requirements.txt              # Python packages list
 ```
 
 ---
@@ -53,14 +54,14 @@ An advanced, end-to-end automotive networking and safety application designed fo
 ### 1. Installation
 Install the necessary Python packages using pip:
 ```bash
-pip install -r "CAN-LIN Project/requirements.txt"
+pip install -r requirements.txt
 ```
 
 ### 2. Configure Virtual CAN Interfaces (Linux)
 On Linux systems, you can instantiate a local kernel-based virtual CAN interface:
 ```bash
 # Setup vcan0 and vcan1
-python "CAN-LIN Project/setup_vcan.py"
+python setup_vcan.py
 ```
 
 ---
@@ -73,28 +74,28 @@ The project is structured with modular entry points. Here are the primary ways t
 Start the main gateway and decoding dashboard:
 ```bash
 # Start the unified, updated UI
-python "CAN-LIN Project/main.py" ui
+python main.py ui
 
 # To run J1939/LIN tests in a terminal (Sender & Receiver)
-python "CAN-LIN Project/main.py" receiver
-python "CAN-LIN Project/main.py" sender
+python main.py receiver
+python main.py sender
 ```
 
 ### Option B: V2X Safety Simulator & Instrument Dashboard
 Launch the standalone V2X safety monitor and simulation tool:
 ```bash
 # Start V2X Simulation GUI
-python "CAN-LIN Project/V2X/main.py" ui
+python V2X/main.py ui
 
 # Start V2X Safety Monitor terminal process
-python "CAN-LIN Project/V2X/main.py" safety
+python V2X/main.py safety
 
 # Start Simulated vehicle ECU broadcaster
-python "CAN-LIN Project/V2X/main.py" simulator
+python V2X/main.py simulator
 ```
 
 ### Option C: Physical Raspberry Pi Deployment
-Consult the [Hardware Deployment Guide](CAN-LIN Project/Hardware_Codes/DEPLOYMENT_GUIDE.md) and run scripts directly on Pi nodes:
+Consult the [Hardware Deployment Guide](Hardware_Codes/DEPLOYMENT_GUIDE.md) and run scripts directly on Pi nodes:
 ```bash
 # Node A (Primary Sender)
 python Hardware_Codes/Vehicle_A/vehicle_a_main.py
@@ -110,7 +111,7 @@ python Hardware_Codes/Vehicle_B/vehicle_b_main.py
 The repository includes a comprehensive, platform-aware validation script that checks all core components (cross-platform modules, CSV parsers, shared interfaces, and communication nodes):
 
 ```bash
-python "CAN-LIN Project/complete_test_suite.py"
+python complete_test_suite.py
 ```
 
 ---
